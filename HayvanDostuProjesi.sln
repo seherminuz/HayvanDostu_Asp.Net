@@ -1,0 +1,70 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.489
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HayvanDostu.BLL", "HayvanDostu.BLL\HayvanDostu.BLL.csproj", "{CDF8BD36-44D1-41EE-AA68-517A1285998A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HayvanDostu.Core", "HayvanDostu.Core\HayvanDostu.Core.csproj", "{20D21230-01EE-4902-AE15-401A224B0017}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HayvanDostu.DAL", "HayvanDostu.DAL\HayvanDostu.DAL.csproj", "{7491104B-3BBE-40D9-9BA6-0CF8E51B65B9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HayvanDostu.Model", "HayvanDostu.Model\HayvanDostu.Model.csproj", "{A1BC8FB0-67E8-4FE9-9D12-810DDC12F41E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HayvanDostu.UI.MVC", "HayvanDostu.UI.MVC\HayvanDostu.UI.MVC.csproj", "{D0F40DAC-72D4-4FE1-87CB-C7327C346911}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CDF8BD36-44D1-41EE-AA68-517A1285998A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDF8BD36-44D1-41EE-AA68-517A1285998A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDF8BD36-44D1-41EE-AA68-517A1285998A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDF8BD36-44D1-41EE-AA68-517A1285998A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20D21230-01EE-4902-AE15-401A224B0017}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20D21230-01EE-4902-AE15-401A224B0017}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20D21230-01EE-4902-AE15-401A224B0017}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20D21230-01EE-4902-AE15-401A224B0017}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7491104B-3BBE-40D9-9BA6-0CF8E51B65B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7491104B-3BBE-40D9-9BA6-0CF8E51B65B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7491104B-3BBE-40D9-9BA6-0CF8E51B65B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7491104B-3BBE-40D9-9BA6-0CF8E51B65B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1BC8FB0-67E8-4FE9-9D12-810DDC12F41E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1BC8FB0-67E8-4FE9-9D12-810DDC12F41E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1BC8FB0-67E8-4FE9-9D12-810DDC12F41E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1BC8FB0-67E8-4FE9-9D12-810DDC12F41E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0F40DAC-72D4-4FE1-87CB-C7327C346911}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0F40DAC-72D4-4FE1-87CB-C7327C346911}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0F40DAC-72D4-4FE1-87CB-C7327C346911}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0F40DAC-72D4-4FE1-87CB-C7327C346911}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E2BCF91F-F762-4AD7-B988-E2F735B62E22}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 6
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://dev.azure.com/orkunsanli
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = HayvanDostu.BLL\\HayvanDostu.BLL.csproj
+		SccProjectName1 = HayvanDostu.BLL
+		SccLocalPath1 = HayvanDostu.BLL
+		SccProjectUniqueName2 = HayvanDostu.Core\\HayvanDostu.Core.csproj
+		SccProjectName2 = HayvanDostu.Core
+		SccLocalPath2 = HayvanDostu.Core
+		SccProjectUniqueName3 = HayvanDostu.DAL\\HayvanDostu.DAL.csproj
+		SccProjectName3 = HayvanDostu.DAL
+		SccLocalPath3 = HayvanDostu.DAL
+		SccProjectUniqueName4 = HayvanDostu.Model\\HayvanDostu.Model.csproj
+		SccProjectName4 = HayvanDostu.Model
+		SccLocalPath4 = HayvanDostu.Model
+		SccProjectUniqueName5 = HayvanDostu.UI.MVC\\HayvanDostu.UI.MVC.csproj
+		SccProjectName5 = HayvanDostu.UI.MVC
+		SccLocalPath5 = HayvanDostu.UI.MVC
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,164 @@
+﻿@using HayvanDostu.UI.MVC.Models
+@model CorporateViewModel
+@{
+    ViewBag.Title = "CorporateRegister";
+}
+
+
+<div>
+    @if (ViewBag.Message != null)
+    {
+        <span>@ViewBag.Message</span>
+    }
+</div>
+
+<div class="login-form-area mg-t-30 mg-b-40">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-4"></div>
+            <form id="adminpro-form" class="adminpro-form" method="post" action="/Account/CorporateRegister">
+                <div class="col-lg-4">
+                    <div class="login-bg">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="logo">
+                                    <a href="#">
+                                        <img src="img/logo/logo.png" alt="" />
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="login-title">
+                                    <h1>Kurumsal Kayıt Formu</h1>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="login-input-head">
+                                    <p>Kurum Adı:</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-8">
+                                <div class="login-input-area">
+                                    @Html.TextBoxFor(a => a.CompanyName, new { type = "text", @class = "form-control" })
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="login-input-head">
+                                    <p>Kurum Tipi :</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-8">
+                                <div class="login-input-area">
+                                    Bakım      @Html.RadioButtonFor(a => a.CompanyType, "Bakım", true)<br>
+                                    Tedavi     @Html.RadioButtonFor(a => a.CompanyType, "Tedavi", false)<br />
+                                    Konaklama  @Html.RadioButtonFor(a => a.CompanyType, "Konaklama", false)
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="login-input-head">
+                                    <p>E-mail :</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-8">
+                                <div class="login-input-area">
+
+                                    @Html.TextBoxFor(a => a.EMail, new { type = "email", @class = "form-control" })
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="login-input-head">
+                                    <p>Şifre :</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-8">
+                                <div class="login-input-area">
+                                    @Html.TextBoxFor(a => a.Password, new { type = "password", @class = "form-control" })
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="login-input-head">
+                                    <p>Şifre Tekrar :</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-8">
+                                <div class="login-input-area">
+                                    @Html.TextBoxFor(a => a.rePassword, new { type = "password", @class = "form-control" })
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="login-input-head">
+                                    <p>Tel :</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-8">
+                                <div class="login-input-area">
+                                    @Html.TextBoxFor(a => a.Phone, new { type = "text", @class = "form-control" })
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="login-input-head">
+                                    <p>Adres :</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-8">
+                                <div class="login-input-area">
+                                    @Html.TextBoxFor(a => a.Address, new { type = "text", @class = "form-control" })
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-4">
+                            </div>
+                            <div class="col-lg-8">
+                                <div class="login-button-pro">
+
+                                    <button type="submit" class="login-button login-button-lg">Kayıt Ol</button>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            @Html.ActionLink("Giriş Sayfasına Geri Dön", "Login")
+
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <div class="col-lg-4"></div>
+        </div>
+    </div>
+</div>
+
+}
+
+
+
