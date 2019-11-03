@@ -1,6 +1,4 @@
 ﻿@using HayvanDostu.UI.MVC.Models
-
-
 @model PetListViewModel
 
 @{
@@ -24,6 +22,7 @@
                                         <img src="@item.Image" alt="" width="90" height="90" />
                                     </a>
                                     <h2><a class="contact-client-name" href="#">@item.Name</a></h2>
+
                                     <h1><a id="group" data-type="select" data-pk="1" data-value="5" data-source="/groups" data-title="Select group" href="#">@item.PetKind</a></h1>
                                 </div>
                                 <div class="contact-client-address">

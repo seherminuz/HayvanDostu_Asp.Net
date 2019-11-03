@@ -36,6 +36,8 @@ namespace HayvanDostu.DAL.Concrete
             modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
 
+           
+
             //modelBuilder.Properties()
             //    .Where(a => a.PropertyType == typeof(string))
             //    .Configure(a => a.IsRequired());

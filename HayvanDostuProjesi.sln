@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HayvanDostu.Model", "Hayvan
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HayvanDostu.UI.MVC", "HayvanDostu.UI.MVC\HayvanDostu.UI.MVC.csproj", "{D0F40DAC-72D4-4FE1-87CB-C7327C346911}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HayvanDostu.MVC", "HayvanDostu.MVC\HayvanDostu.MVC.csproj", "{F38340D4-1C3A-47AD-8CF8-C52B86EF7F5E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,32 +41,15 @@ Global
 		{D0F40DAC-72D4-4FE1-87CB-C7327C346911}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D0F40DAC-72D4-4FE1-87CB-C7327C346911}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D0F40DAC-72D4-4FE1-87CB-C7327C346911}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F38340D4-1C3A-47AD-8CF8-C52B86EF7F5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F38340D4-1C3A-47AD-8CF8-C52B86EF7F5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F38340D4-1C3A-47AD-8CF8-C52B86EF7F5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F38340D4-1C3A-47AD-8CF8-C52B86EF7F5E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E2BCF91F-F762-4AD7-B988-E2F735B62E22}
-	EndGlobalSection
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 6
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://dev.azure.com/orkunsanli
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = HayvanDostu.BLL\\HayvanDostu.BLL.csproj
-		SccProjectName1 = HayvanDostu.BLL
-		SccLocalPath1 = HayvanDostu.BLL
-		SccProjectUniqueName2 = HayvanDostu.Core\\HayvanDostu.Core.csproj
-		SccProjectName2 = HayvanDostu.Core
-		SccLocalPath2 = HayvanDostu.Core
-		SccProjectUniqueName3 = HayvanDostu.DAL\\HayvanDostu.DAL.csproj
-		SccProjectName3 = HayvanDostu.DAL
-		SccLocalPath3 = HayvanDostu.DAL
-		SccProjectUniqueName4 = HayvanDostu.Model\\HayvanDostu.Model.csproj
-		SccProjectName4 = HayvanDostu.Model
-		SccLocalPath4 = HayvanDostu.Model
-		SccProjectUniqueName5 = HayvanDostu.UI.MVC\\HayvanDostu.UI.MVC.csproj
-		SccProjectName5 = HayvanDostu.UI.MVC
-		SccLocalPath5 = HayvanDostu.UI.MVC
 	EndGlobalSection
 EndGlobal

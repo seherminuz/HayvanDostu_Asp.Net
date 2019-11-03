@@ -24,7 +24,7 @@ namespace HayvanDostu.Model
         public bool HaveAPet { get; set; }
         public int PetCount { get; set; }
         public int UserRoleID { get; set; }
-        public string Image { get; set; }
+       
 
         public virtual ICollection<Point> Points { get; set; }
         public virtual ICollection<Comment> Comments { get; set; }
