@@ -7,7 +7,7 @@ using System.Drawing;
 using System.IO;
 using System.Web;
 using System.Web.Mvc;
-
+using System.Web.Security;
 
 namespace HayvanDostu.MVC.Controllers
 {
@@ -112,6 +112,12 @@ namespace HayvanDostu.MVC.Controllers
                 ViewBag.Message = ex.Message;
             }
             return View("Login");
+        }
+
+        public ActionResult LogOff()
+        {
+            Session["personalID"] = null;
+            return RedirectToAction("Login");
         }
     }
 }

@@ -873,6 +873,10 @@
     <Content Include="Views\Personal\PetList.cshtml" />
     <Content Include="Views\Personal\PetProfil.cshtml" />
     <Content Include="Views\Personal\PetProfileCreate.cshtml" />
+    <Content Include="Views\Personal\Profil.cshtml" />
+    <Content Include="Views\Personal\MyPetList.cshtml" />
+    <Content Include="Views\Personal\ProfilUpdate.cshtml" />
+    <Content Include="Views\Personal\PetProfileUpdate.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

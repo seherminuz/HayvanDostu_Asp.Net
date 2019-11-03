@@ -1,0 +1,88 @@
+﻿@using HayvanDostu.MVC.Models
+@using HayvanDostu.Model
+@model PetListModel
+@{
+    ViewBag.Title = "MyPetList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="main-content">
+    <!-- Section: inner-header -->
+    <section class="inner-header divider parallax layer-overlay overlay-white-8" data-bg-img="images/bg/bg6.jpg">
+        <div class="container pt-60 pb-60">
+            <!-- Section Content -->
+            <div class="section-content">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <h2 class="title">Shop Cart</h2>
+                        <ol class="breadcrumb text-center text-black mt-10">
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Pages</a></li>
+                            <li class="active text-theme-colored">Page Title</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="section-content">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="table-responsive">
+                            <table class="table table-striped table-bordered tbl-shopping-cart">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>Fotoğraf :</th>
+                                        <th>Adı :</th>
+                                        <th>Cinsi :</th>
+                                        <th>Türü :</th>
+                                        <th>Doğum Tarihi :</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (Pet item in Model.Pets)
+                                    {
+                                        if (item.IndividualID == Convert.ToInt32(Session["personalID"]))
+	{
+		 
+                                    <tr class="cart_item">
+                                       <td>
+
+                                        <button type="submit" class="btn btn-danger btnDelete" data-mypetID="@item.ID">Sil</button>
+                                       </td>
+
+                                        <td class="product-thumbnail"><a href="#"><img alt="member" src="@item.Image" width="255" height="194"></a></td>
+                                        <td class="product-name">
+                                            <a href="#">@item.Name</a>
+
+                                        </td>
+                                        <td class="product-price"><span class="amount">@item.PetType</span></td>
+                                        <td class="product-price"><span class="amount">@item.PetKind</span></td>
+                                        <td class="product-subtotal"><span class="amount">@item.BirthDate</span></td>
+                                        <td>
+                                           
+                                            <a  class="btn btn-default btn-xs btn-add-to-cart" href="/Personal/PetProfileUpdate/@item.ID">Düzenle</a>
+
+                                        </td>
+                                    </tr>
+	}
+
+                                    }
+
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+

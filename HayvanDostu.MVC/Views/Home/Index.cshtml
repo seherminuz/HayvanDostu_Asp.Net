@@ -631,16 +631,40 @@
         </div>
     </section>
     @section signin{
-        @if (Session["personalID"] != null)
+        @if (Session["personalID"] == null)
         {
-            <a class="btn btn-default btn-lg btn-circled mr-10" href="#" style="margin-bottom:5px">Giriş Yap</a>
+            <a class="btn btn-default btn-lg btn-circled mr-10" href="/Account/Login/" style="margin-bottom:5px">Giriş Yap</a>
+        }
+        else
+        {
+            <a class="btn btn-default btn-lg btn-circled mr-10" href="/Account/LogOff/" style="margin-bottom:5px">Çıkış Yap</a>
+
         }
     }
 
     @section signup{
+        @if (Session["personalID"] == null)
+        {
+            <a class="btn btn-default btn-lg btn-circled mr-10" href="/Account/PersonalRegister/" style="width:114px; margin-bottom:5px">Üye Ol</a>
+        }
+        else
+        {
+        }
+    }
+
+    @section profile{
         @if (Session["personalID"] != null)
         {
-            <a class="btn btn-default btn-lg btn-circled mr-10" href="#" style="width:114px; margin-bottom:5px">Üye Ol</a>
+            <a href="#">HESAP</a>
+            <ul class="dropdown">
+                <li><a href="/Personal/Profil/@Convert.ToInt32(Session["personalID"])/">Profilim</a></li>
+                <li><a href="/Personal/PetProfileCreate/">Gelen Kutusu</a></li>
+                <li><a href="/Personal/MyPetList/">Evcil Hayvanlarım</a></li>
+            </ul>
+        }
+        else
+        {
+            
         }
     }
 
