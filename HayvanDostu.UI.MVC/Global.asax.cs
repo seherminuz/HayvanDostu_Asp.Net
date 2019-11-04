@@ -14,6 +14,8 @@ namespace HayvanDostu.UI.MVC
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
         }
+
+        //LogOff olunca tarayıcıdaki önbelleği yok sayar.
         protected void Application_BeginRequest()
         {
             Response.Cache.SetCacheability(HttpCacheability.NoCache);

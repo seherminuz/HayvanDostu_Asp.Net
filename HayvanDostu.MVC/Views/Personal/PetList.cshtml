@@ -13,7 +13,7 @@
         <div class="container pt-60 pb-60">
             <!-- Section Content -->
             <div class="section-content">
-                
+
                 <div class="row">
                     <div class="col-md-12 text-center">
                         <h2 class="title">SAHİPLENDİRİLMEYİ BEKLEYEN EVCİL HAYVANLAR</h2>
@@ -33,26 +33,31 @@
                             <div class="row multi-row-clearfix">
                                 @foreach (Pet item in Model.Pets)
                                 {
+                                   
+                                        if (item.IndividualID != Convert.ToInt32(Session["personalID"]))
+                                        {
 
-                                <div class="col-sm-6 col-md-4 col-lg-4 mb-30">
-                                    <div class="product">
-                                        <div class="product-thumb">
-                                            <img style="border-radius:50%" alt="" src="@item.Image" class="img-responsive img-fullwidth">
-                                            <div class="overlay"></div>
-                                        </div>
-                                        <div class="product-details text-center">
-                                            <a href="#"><h5 class="product-title">@item.Name</h5></a>
-                                            <label>@item.PetKind</label>
-                                            <p>@item.PetType</p>
-                                            <div class="price"><ins><span class="amount">@item.BirthDate</span></ins></div>
-                                            <div class="btn-add-to-cart-wrapper">
-                                                <a class="btn btn-default btn-xs btn-add-to-cart" href="/Personal/PetProfil/@item.ID">Profili Gör</a>
+                                    <div class="col-sm-6 col-md-4 col-lg-4 mb-30">
+                                        <div class="product">
+                                            <div class="product-thumb">
+                                                <img style="border-radius:50%" alt="" src="@item.Image" class="img-responsive img-fullwidth">
+                                                <div class="overlay"></div>
+                                            </div>
+                                            <div class="product-details text-center">
+                                                <a href="#"><h5 class="product-title">@item.Name</h5></a>
+                                                <label>@item.PetKind</label>
+                                                <p>@item.PetType</p>
+                                                <div class="price"><ins><span class="amount">@item.BirthDate</span></ins></div>
+                                                <div class="btn-add-to-cart-wrapper">
+                                                    <a class="btn btn-default btn-xs btn-add-to-cart" href="/Personal/PetProfil/@item.ID">Profili Gör</a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                        }
+                                    
                                 }
-                                
+
                             </div>
                             <div class="row">
                                 <div class="col-md-12">

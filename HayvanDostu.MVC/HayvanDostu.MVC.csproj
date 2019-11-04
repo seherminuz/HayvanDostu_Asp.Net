@@ -112,6 +112,37 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ContentAdmin\css\adminlte.min.css" />
+    <Content Include="ContentAdmin\css\all.min.css" />
+    <Content Include="ContentAdmin\css\daterangepicker.css" />
+    <Content Include="ContentAdmin\css\icheck-bootstrap.min.css" />
+    <Content Include="ContentAdmin\css\jqvmap.min.css" />
+    <Content Include="ContentAdmin\css\OverlayScrollbars.min.css" />
+    <Content Include="ContentAdmin\css\summernote-bs4.css" />
+    <Content Include="ContentAdmin\css\tempusdominus-bootstrap-4.min.css" />
+    <Content Include="ContentAdmin\img\AdminLTELogo.png" />
+    <Content Include="ContentAdmin\img\user2-160x160.jpg" />
+    <Content Include="ContentAdmin\js\adminlte.js" />
+    <Content Include="ContentAdmin\js\adminlte.min.js" />
+    <Content Include="ContentAdmin\js\adminmain.js" />
+    <Content Include="ContentAdmin\js\bootstrap.bundle.min.js" />
+    <Content Include="ContentAdmin\js\Chart.min.js" />
+    <Content Include="ContentAdmin\js\dashboard.js" />
+    <Content Include="ContentAdmin\js\daterangepicker.js" />
+    <Content Include="ContentAdmin\js\demo.js" />
+    <Content Include="ContentAdmin\js\jquery-ui.min.js" />
+    <Content Include="ContentAdmin\js\jquery.knob.min.js" />
+    <Content Include="ContentAdmin\js\jquery.min.js" />
+    <Content Include="ContentAdmin\js\jquery.overlayScrollbars.min.js" />
+    <Content Include="ContentAdmin\js\jquery.vmap.min.js" />
+    <Content Include="ContentAdmin\js\jquery.vmap.usa.js" />
+    <Content Include="ContentAdmin\js\moment.min.js" />
+    <Content Include="ContentAdmin\js\sparkline.js" />
+    <Content Include="ContentAdmin\js\summernote-bs4.min.js" />
+    <Content Include="ContentAdmin\js\tempusdominus-bootstrap-4.min.js" />
+    <Content Include="ContentAdmin\webfonts\fa-brands-400.svg" />
+    <Content Include="ContentAdmin\webfonts\fa-regular-400.svg" />
+    <Content Include="ContentAdmin\webfonts\fa-solid-900.svg" />
     <Content Include="Content\ajax-load\donation-form.html" />
     <Content Include="Content\ajax-load\form-appointment.html" />
     <Content Include="Content\ajax-load\member-booking-form.html" />
@@ -811,6 +842,18 @@
     <Content Include="Scripts\esm\popper.js.map" />
     <Content Include="Scripts\esm\popper-utils.min.js.map" />
     <Content Include="Scripts\esm\popper-utils.js.map" />
+    <Content Include="ContentAdmin\webfonts\fa-brands-400.eot" />
+    <Content Include="ContentAdmin\webfonts\fa-brands-400.ttf" />
+    <Content Include="ContentAdmin\webfonts\fa-brands-400.woff" />
+    <Content Include="ContentAdmin\webfonts\fa-brands-400.woff2" />
+    <Content Include="ContentAdmin\webfonts\fa-regular-400.eot" />
+    <Content Include="ContentAdmin\webfonts\fa-regular-400.ttf" />
+    <Content Include="ContentAdmin\webfonts\fa-regular-400.woff" />
+    <Content Include="ContentAdmin\webfonts\fa-regular-400.woff2" />
+    <Content Include="ContentAdmin\webfonts\fa-solid-900.eot" />
+    <Content Include="ContentAdmin\webfonts\fa-solid-900.ttf" />
+    <Content Include="ContentAdmin\webfonts\fa-solid-900.woff" />
+    <Content Include="ContentAdmin\webfonts\fa-solid-900.woff2" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -836,12 +879,14 @@
     <Compile Include="App_Start\Ninject.Web.Common.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PersonalController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModel.cs" />
+    <Compile Include="Models\AdminModel.cs" />
     <Compile Include="Models\LoginViewModel.cs" />
     <Compile Include="Models\PetListModel.cs" />
     <Compile Include="Models\PetViewModel.cs" />
@@ -877,6 +922,9 @@
     <Content Include="Views\Personal\MyPetList.cshtml" />
     <Content Include="Views\Personal\ProfilUpdate.cshtml" />
     <Content Include="Views\Personal\PetProfileUpdate.cshtml" />
+    <Content Include="Views\Shared\_LayoutAdmin.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Admin\ListPassivePersonal.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

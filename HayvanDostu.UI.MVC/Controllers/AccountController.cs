@@ -23,7 +23,6 @@ namespace HayvanDostu.UI.MVC.Controllers
             return View();
         }
     
-
         [HttpPost]
         public ActionResult Login(LoginViewModel model, string Remember)
         {

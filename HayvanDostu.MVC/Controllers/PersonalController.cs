@@ -12,35 +12,19 @@ using System.IO;
 
 namespace HayvanDostu.MVC.Controllers
 {
-    [Authorize]
+    //[Authorize]
     public class PersonalController : Controller
     {
         // GET: Personal
         IPersonalService _personalService;
         IPetService _petService;
-        IPhotoService _photoService;
         PetListModel model;
 
-        public PersonalController(IPersonalService personalService, IPetService petService, IPhotoService photoService)
+        public PersonalController(IPersonalService personalService, IPetService petService)
         {
             _personalService = personalService;
             _petService = petService;
-            _photoService = photoService;
             model = new PetListModel();
-        }
-
-        public ActionResult PetList ()
-        {
-            model.Pets = _petService.GetAll();
-            int id = Convert.ToInt32(Session["personalID"]);
-            return View(model);
-        }
-
-        public ActionResult PetProfil(int id)
-        {
-            Pet pet = _petService.Get(id);
-            return View(pet);
-
         }
 
         public ActionResult PetProfileCreate()
@@ -85,11 +69,19 @@ namespace HayvanDostu.MVC.Controllers
             return RedirectToAction("PetList");
         }
 
-        public ActionResult Profil(int id)
+        public ActionResult PetProfil(int id)
         {
-            Personal prs = _personalService.Get(id);
-            return View(prs);
-            
+            Pet pet = _petService.Get(id);
+            return View(pet);
+
+        }
+
+        public ActionResult PetList ()
+        {
+                    
+            model.Pets = _petService.GetAll();
+
+            return View(model);
         }
 
         public ActionResult PetProfileUpdate(int? id)
@@ -137,6 +129,19 @@ namespace HayvanDostu.MVC.Controllers
             bool result = _petService.Update(original);
             return RedirectToAction("PetProfil", "Personal", new { id = pet.ID });
 
+        }
+
+        public ActionResult PetDelete(int id)
+        {
+            _petService.DeleteByID(id);
+            return Json("ok", JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult Profil(int id)
+        {
+            Personal prs = _personalService.Get(id);
+            return View(prs);
+            
         }
 
         public ActionResult ProfilUpdate(int? id)
@@ -190,6 +195,7 @@ namespace HayvanDostu.MVC.Controllers
             model.Pets = _petService.GetAll();
             return View(model);
         }
+
 
         public ActionResult Header()
         {
