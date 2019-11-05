@@ -66,6 +66,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstarct\IMessageDAL.cs" />
     <Compile Include="Abstarct\IPhotoDAL.cs" />
     <Compile Include="Abstarct\IUserRoleDAL.cs" />
     <Compile Include="Concrete\EntityFramework\DAL\EFChartDAL.cs" />
@@ -82,6 +83,7 @@
     <Compile Include="Abstarct\IReservationDAL.cs" />
     <Compile Include="Abstarct\IVeterinaryDAL.cs" />
     <Compile Include="Concrete\EntityFramework\DAL\EFCorporateDAL.cs" />
+    <Compile Include="Concrete\EntityFramework\DAL\EFMessageDAL.cs" />
     <Compile Include="Concrete\EntityFramework\DAL\EFPersonalAccommodationDAL.cs" />
     <Compile Include="Concrete\EntityFramework\DAL\EFPersonalDAL.cs" />
     <Compile Include="Concrete\EntityFramework\DAL\EFPetDAL.cs" />
@@ -93,6 +95,7 @@
     <Compile Include="Concrete\EntityFramework\DAL\EFUserRoleDAL.cs" />
     <Compile Include="Concrete\EntityFramework\DAL\EFVeterinaryDAL.cs" />
     <Compile Include="Concrete\EntityFramework\Mappings\CorporateMapping.cs" />
+    <Compile Include="Concrete\EntityFramework\Mappings\MessageMapping.cs" />
     <Compile Include="Concrete\EntityFramework\Mappings\PersonalMapping.cs" />
     <Compile Include="Concrete\EntityFramework\Mappings\PetMapping.cs" />
     <Compile Include="Concrete\EntityFramework\Mappings\PhotoMapping.cs" />

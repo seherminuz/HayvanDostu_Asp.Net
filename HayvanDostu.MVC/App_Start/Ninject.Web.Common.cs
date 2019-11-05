@@ -76,6 +76,8 @@ namespace HayvanDostu.MVC.App_Start
             kernel.Bind<IPhotoService>().To<PhotoService>();
             kernel.Bind<IReservationAccommodationService>().To<ReservationAccommodationService>();
             kernel.Bind<IReservationService>().To<ReservationService>();
+            kernel.Bind<IMessageService>().To<MessageService>();
+
 
             kernel.Load<DALModule>();
         }        

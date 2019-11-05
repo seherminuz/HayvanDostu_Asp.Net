@@ -22,7 +22,7 @@ namespace HayvanDostu.DAL.Concrete
         {
             modelBuilder.Configurations.Add(new PetMapping());
             modelBuilder.Configurations.Add(new PhotoMapping());
-
+            modelBuilder.Configurations.Add(new MessageMapping());
             modelBuilder.Configurations.Add(new ChartMapping());
             modelBuilder.Configurations.Add(new PriceMapping());         
             modelBuilder.Configurations.Add(new PersonalMapping());
@@ -55,6 +55,7 @@ namespace HayvanDostu.DAL.Concrete
         public DbSet<Veterinary> Veterinaries { get; set; }
         public DbSet<UserRole> UserRoles { get; set; }
         public DbSet<Corporate> Corporates { get; set; }
+        public DbSet<Message> Messages { get; set; }
 
 
 

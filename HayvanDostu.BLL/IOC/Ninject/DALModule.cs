@@ -27,6 +27,7 @@ namespace HayvanDostu.BLL.IOC.Ninject
             Bind<IPriceDAL>().To<EFPriceDAL>();
             Bind<ICommentDAL>().To<EFCommentDAL>();
             Bind<IUserRoleDAL>().To<EFUserRoleDAL>();
+            Bind<IMessageDAL>().To<EFMessageDAL>();
 
 
         }

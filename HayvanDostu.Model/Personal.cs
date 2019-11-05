@@ -28,6 +28,7 @@ namespace HayvanDostu.Model
 
         public virtual ICollection<Point> Points { get; set; }
         public virtual ICollection<Comment> Comments { get; set; }
+        public virtual ICollection<Message> Messages { get; set; }
         public virtual ICollection<Pet> Pets { get; set; }
         public virtual ICollection<PersonalAccommodation> PersonalAccommodations { get; set; }
         public virtual UserRole UserRole { get; set; }

@@ -1,0 +1,84 @@
+﻿@using HayvanDostu.Model
+@model List<Message>
+@{
+    ViewBag.Title = "MessageBox";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="main-content">
+    <!-- Section: inner-header -->
+    <section class="inner-header divider parallax layer-overlay overlay-white-8" data-bg-img="images/bg/bg6.jpg">
+        <div class="container pt-60 pb-60">
+            <!-- Section Content -->
+            <div class="section-content">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <h2 class="title">MESAJLARINIZ</h2>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section>
+        <div class="container">
+            <div class="section-content">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="table-responsive">
+                            <table class="table table-striped table-bordered tbl-shopping-cart">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>Gönderen: </th>
+                                        <th>Mesaj Detayı: </th>
+                                        <th></th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (Message item in Model)
+                                    {
+                                        if (item.PersonalID == Convert.ToInt32(Session["personalID"]))
+                                        {
+
+                                    <tr class="cart_item">
+                                        <td></td>
+
+                                        <td class="product-name">
+                                            <a href="#">@item.Personal.FirstName &nbsp; @item.Personal.LastName</a>
+
+                                        </td>
+                                        <td class="product-name">
+                                            <a href="#">Detay göster</a>
+
+                                        </td>
+                                        <td>
+
+                                            <a style="font-size:15px" class="btn btn-default btn-xs btn-add-to-cart" href="/Personal/PetProfileUpdate/@item.ID">Cevapla</a>
+                                            <span></span>
+
+
+
+                                        </td>
+                                        <td> <button style="font-size:15px; background-color:firebrick;color:aliceblue" type="submit" class="btn btn-default btn-xs btn-add-to-cart btnDelete" data-id="@item.ID">Sil</button></td>
+                                    </tr>
+                                        }
+
+                                    }
+
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
+

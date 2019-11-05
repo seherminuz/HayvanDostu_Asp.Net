@@ -18,12 +18,14 @@ namespace HayvanDostu.MVC.Controllers
         // GET: Personal
         IPersonalService _personalService;
         IPetService _petService;
+        IMessageService _messageService;
         PetListModel model;
 
-        public PersonalController(IPersonalService personalService, IPetService petService)
+        public PersonalController(IPersonalService personalService, IPetService petService, IMessageService messageService)
         {
             _personalService = personalService;
             _petService = petService;
+            _messageService = messageService;
             model = new PetListModel();
         }
 
@@ -194,6 +196,29 @@ namespace HayvanDostu.MVC.Controllers
         {
             model.Pets = _petService.GetAll();
             return View(model);
+        }
+
+        public ActionResult MessageBox()
+        {
+            var model = new List<Message>();
+           model = _messageService.GetAll();
+            return View(model);
+        }
+
+        public ActionResult SendMessage(int id)
+        {
+            Personal personal = _personalService.Get(id);
+            return View(personal);
+        }
+
+        [HttpPost]
+        public ActionResult SendMessage(Message model)
+        {
+            Message message = new Message();
+            message.MessageDetails = model.MessageDetails;
+            message.PersonalID = model.ID;
+            _messageService.Insert(message);
+            return RedirectToAction("SendMessage");
         }
 
 

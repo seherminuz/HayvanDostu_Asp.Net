@@ -58,6 +58,7 @@
     <Compile Include="Comment.cs" />
     <Compile Include="Corporate.cs" />
     <Compile Include="Enums.cs" />
+    <Compile Include="Message.cs" />
     <Compile Include="Personal.cs" />
     <Compile Include="PersonalAccommodation.cs" />
     <Compile Include="Pet.cs" />

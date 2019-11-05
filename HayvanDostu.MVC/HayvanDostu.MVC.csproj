@@ -925,6 +925,8 @@
     <Content Include="Views\Shared\_LayoutAdmin.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Admin\ListPassivePersonal.cshtml" />
+    <Content Include="Views\Personal\MessageBox.cshtml" />
+    <Content Include="Views\Personal\SendMessage.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
