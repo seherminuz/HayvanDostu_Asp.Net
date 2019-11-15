@@ -664,7 +664,31 @@
         }
         else
         {
-            
+
         }
+    }
+
+    @section scripts{
+        <script>
+            $(function () {
+                $('.deneme a').click(function (event) {
+                    alert('deneme');
+                    event.preventDefault();
+                    $('.deneme').find('a.active').removeClass('active');
+                    $(this).addClass('active');
+                });
+            
+
+            });
+                    //var a = document.querySelectorAll(".menuzord-menu li a");
+                    //for (var i = 0; length < a.length;i<length< i++) {
+                    //    a[i].onclick = function () {
+                    //        var b = document.querySelector(".menuzord-menu li.active");
+                    //        if (b) b.classList.remove("active");
+                    //        this.parentNode.classList.add("active");
+                    //    }
+                    //}
+        </script>
+
     }
 

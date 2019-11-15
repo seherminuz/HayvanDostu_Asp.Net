@@ -1,15 +1,14 @@
 ﻿@using HayvanDostu.MVC.Models
 @using HayvanDostu.Model
 @model AdminModel
-
 @{
-    ViewBag.Title = "ListPassivePersonal";
+    ViewBag.Title = "ListActivePersonal";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
 <div class="card card-primary card-outline">
     <div class="card-header">
-        <h3 class="card-title">Onay Bekleyen Üyeler</h3>
+        <h3 class="card-title">Aktif Üyeler</h3>
 
     </div>
     <div class="card-body p-0">
@@ -27,7 +26,7 @@
                 @foreach (Personal item in Model.Personals)
                 {
 
-                    if (item.IsActive != true)
+                    if (item.IsActive == true)
                     {
                         <tbody>
                             <tr>
@@ -39,11 +38,6 @@
                                 <td class="mailbox-name">@item.Phone</td>
                                 <td class="mailbox-name">@item.PetCount</td>
 
-                                <td>
-                                    <a href="/Admin/ConfirmPersonal/@item.ID">
-                                        <button type="button" class="btn btn-primary " data-confirmID="@item.ID">Onayla</button>
-                                    </a>
-                                </td>
                                 <td>
                                     <button type="button" class="btn btn-danger btnDelete " data-deleteID="@item.ID">Sil</button>
                                 </td>
@@ -60,6 +54,7 @@
     </div>
 
 </div>
+
 
 @section scripts{
     <script>

@@ -16,6 +16,7 @@ namespace HayvanDostu.MVC.Controllers
         ICorporateService _corporateService;
         IPetService _petService;
         AdminModel model;
+        PetListModel petModel;
 
         public AdminController(IPersonalService personalService, ICorporateService corporateService, IPetService petService)
         {
@@ -36,6 +37,12 @@ namespace HayvanDostu.MVC.Controllers
             return View(model);
         }
 
+        public ActionResult ListActivePersonal()
+        {
+            model.Personals = _personalService.GetAll();
+            return View(model);
+        }
+
         public ActionResult ConfirmPersonal(int id)
         {
             model.Personal = _personalService.Get(id);
@@ -50,6 +57,18 @@ namespace HayvanDostu.MVC.Controllers
         {
             _personalService.DeleteByID(deleteID);
             return Json("ok", JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult ListPet()
+        {
+            model.Pets = _petService.GetAll();
+            return View(model);
+        }
+
+        public ActionResult DeletePet(int deleteID)
+        {
+            _petService.DeleteByID(deleteID);
+            return Json("ok",JsonRequestBehavior.AllowGet);
         }
     }
 }
