@@ -205,6 +205,12 @@ namespace HayvanDostu.MVC.Controllers
             return View(model);
         }
 
+        public ActionResult DeleteMessage(int deleteID)
+        {
+            _messageService.DeleteByID(deleteID);
+            return Json("ok", JsonRequestBehavior.AllowGet);
+        }
+
         public ActionResult SendMessage(int id)
         {
             Personal personal = _personalService.Get(id);
@@ -215,12 +221,43 @@ namespace HayvanDostu.MVC.Controllers
         public ActionResult SendMessage(Message model)
         {
             Message message = new Message();
+            message.Name = model.Name;
+            message.LastName = model.LastName;
             message.MessageDetails = model.MessageDetails;
             message.PersonalID = model.ID;
             _messageService.Insert(message);
-            return RedirectToAction("SendMessage");
+            return RedirectToAction("PetList");
         }
 
+        public ActionResult ReadMessage()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult ReadMessage(int id)
+        {
+            ReturnResult rs = new ReturnResult();
+            try
+            {
+                    Message model = _messageService.Get(id);
+                    Message message = new Message();
+                    message.Name = model.Name;
+                    message.LastName = model.LastName;
+                    message.MessageDetails = model.MessageDetails;
+                    
+                    rs.items = message;
+                    rs.message = "İşlem başarılı";
+                
+            }
+            catch
+            {
+               
+                rs.message = "İşlem sırasında hata!";
+                rs.items = null;
+            }
+            return Json(rs, JsonRequestBehavior.AllowGet);
+        }
 
         public ActionResult Header()
         {

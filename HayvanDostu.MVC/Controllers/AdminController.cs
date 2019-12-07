@@ -1,4 +1,5 @@
 ﻿using HayvanDostu.BLL.Abstract;
+using HayvanDostu.Model;
 using HayvanDostu.MVC.Models;
 using System;
 using System.Collections.Generic;
@@ -15,14 +16,16 @@ namespace HayvanDostu.MVC.Controllers
         IPersonalService _personalService;
         ICorporateService _corporateService;
         IPetService _petService;
+        IMainPageOptionsService _mainPageOptionsService;
         AdminModel model;
         PetListModel petModel;
 
-        public AdminController(IPersonalService personalService, ICorporateService corporateService, IPetService petService)
+        public AdminController(IPersonalService personalService, ICorporateService corporateService, IPetService petService,IMainPageOptionsService mainPageOptionsService)
         {
             _personalService = personalService;
             _corporateService = corporateService;
             _petService = petService;
+            _mainPageOptionsService = mainPageOptionsService;
             model = new AdminModel();
         }
 
@@ -69,6 +72,34 @@ namespace HayvanDostu.MVC.Controllers
         {
             _petService.DeleteByID(deleteID);
             return Json("ok",JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult AdminMainPageOptions()
+        {
+
+            var mainOptions = _mainPageOptionsService.GetAll();
+            
+            return View(mainOptions);
+        }
+
+        [HttpPost]
+        public ActionResult AdminMainPageOptions(MainPageOptions model)
+        {
+
+            var mo = _mainPageOptionsService.Get(model.ID);
+                mo.Title = model.Title;
+                mo.Author = model.Author;
+                mo.Address = model.Address;
+                mo.Description = model.Description;
+                mo.Keywords = model.Keywords;
+                mo.Phone = model.Phone;
+                mo.SocialLink1 = model.SocialLink1;
+                mo.SocialLink2 = model.SocialLink2;
+                mo.SocialLink3 = model.SocialLink3;
+
+                 _mainPageOptionsService.Update(mo);
+
+            return RedirectToAction("AdminMainPageOptions");
         }
     }
 }

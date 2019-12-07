@@ -31,7 +31,7 @@ namespace HayvanDostu.BLL.Concrete
 
         public Veterinary Get(int entityID)
         {
-            return _VeterinaryDAL.Get(a => a.ID == entityID);
+            return _VeterinaryDAL.Get(a => a.CorporateID == entityID);
         }
 
         public List<Veterinary> GetAll()

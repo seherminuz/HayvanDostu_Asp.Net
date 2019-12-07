@@ -28,6 +28,8 @@ namespace HayvanDostu.BLL.IOC.Ninject
             Bind<ICommentDAL>().To<EFCommentDAL>();
             Bind<IUserRoleDAL>().To<EFUserRoleDAL>();
             Bind<IMessageDAL>().To<EFMessageDAL>();
+            Bind<IMainPageOptionsDAL>().To<EFMainPageOptionsDAL>();
+
 
 
         }

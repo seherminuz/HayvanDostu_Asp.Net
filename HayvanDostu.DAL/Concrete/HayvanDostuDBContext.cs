@@ -30,6 +30,7 @@ namespace HayvanDostu.DAL.Concrete
             modelBuilder.Configurations.Add(new CommentMapping());
             modelBuilder.Configurations.Add(new PersonalAccommodationMapping());
             modelBuilder.Configurations.Add(new ReservationAccommodationMapping());
+            modelBuilder.Configurations.Add(new MainPageOptionsMapping());
 
 
 
@@ -56,6 +57,7 @@ namespace HayvanDostu.DAL.Concrete
         public DbSet<UserRole> UserRoles { get; set; }
         public DbSet<Corporate> Corporates { get; set; }
         public DbSet<Message> Messages { get; set; }
+        public DbSet<MainPageOptions> MainPageOptions { get; set; }
 
 
 

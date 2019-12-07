@@ -44,27 +44,29 @@
                                         if (item.PersonalID == Convert.ToInt32(Session["personalID"]))
                                         {
 
-                                    <tr class="cart_item">
-                                        <td></td>
+                                            <tr class="cart_item">
+                                                <td></td>
 
-                                        <td class="product-name">
-                                            <a href="#">@item.Personal.FirstName &nbsp; @item.Personal.LastName</a>
+                                                <td class="product-name">
+                                                    <a href="#">@item.Name &nbsp; @item.LastName</a>
 
-                                        </td>
-                                        <td class="product-name">
-                                            <a href="#">Detay göster</a>
+                                                </td>
+                                                <td class="product-name">
 
-                                        </td>
-                                        <td>
-
-                                            <a style="font-size:15px" class="btn btn-default btn-xs btn-add-to-cart" href="/Personal/PetProfileUpdate/@item.ID">Cevapla</a>
-                                            <span></span>
+                                                    <button type="button" class="btn btn-primary btnModal" data-modalID="@item.ID">Detay Göster</button>
 
 
+                                                </td>
+                                                <td>
 
-                                        </td>
-                                        <td> <button style="font-size:15px; background-color:firebrick;color:aliceblue" type="submit" class="btn btn-default btn-xs btn-add-to-cart btnDelete" data-id="@item.ID">Sil</button></td>
-                                    </tr>
+
+                                                    <span></span>
+
+
+
+                                                </td>
+                                                <td> <button style="font-size:15px; background-color:firebrick;color:aliceblue" type="submit" class="btn btn-default btn-xs btn-add-to-cart btnDelete" data-id="@item.ID">Sil</button></td>
+                                            </tr>
                                         }
 
                                     }
@@ -81,4 +83,77 @@
     </section>
 
 </div>
+
+<div class="modal" id="modalInfo">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            </div>
+            <form method="post">
+                <div class="modal-body">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Kapat</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+@section scripts{
+
+    <script>
+        $(".btnModal").click(function () {
+
+            var modalID = $(this).attr("data-modalID")
+            $.ajax({
+                url: "/Personal/ReadMessage/" + modalID,
+                type: "POST",
+                data: { "id": modalID },
+                success: function (response) {
+                    if (response != null) {
+
+                        var text = '<h5 class="modal-title">Mesaj: <br> ' + response.items.MessageDetails + '</h5>';
+                        $("#modalInfo .modal-body").html(text);
+                        $("#modalInfo").modal("show");
+
+                        var title = ' <h2 class="modal-title">Gönderen: ' + response.items.Name + '&nbsp;' + response.items.LastName +  '</h2>';
+                        $("#modalInfo .modal-header").html(title);
+                        $("#modalInfo").modal("show");
+                    }
+
+                    else {
+                        $("#modalInfo .modal-body").text(response.message);
+                        $("#modalInfo").modal("show");
+                    }
+                }
+
+            });
+
+        })
+    </script>
+
+    <script>
+        $(".btnDelete").click(function () {
+            var deleteID = $(this).attr("data-deleteID");
+
+            $.ajax({
+                url: "/Personal/DeleteMessage/" + deleteID,
+                type: "GET",
+                data: { "deleteID": deleteID },
+                success: function (response) {
+                    if (response == "ok") {
+                        alert("Mesaj silindi");
+                        window.location.reload();
+                    }
+                    else {
+                        alert("HATA");
+                    }
+                }
+            });
+        })
+    </script>
+}
 

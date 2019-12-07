@@ -70,6 +70,7 @@
     <Compile Include="Abstract\IChartService.cs" />
     <Compile Include="Abstract\ICommentService.cs" />
     <Compile Include="Abstract\ICorporateService.cs" />
+    <Compile Include="Abstract\IMainPageOptionsService.cs" />
     <Compile Include="Abstract\IMessageService.cs" />
     <Compile Include="Abstract\IPersonalAccommodationService.cs" />
     <Compile Include="Abstract\IPersonalService.cs" />
@@ -82,6 +83,7 @@
     <Compile Include="Concrete\ChartService.cs" />
     <Compile Include="Concrete\CommentService.cs" />
     <Compile Include="Concrete\CorporateService.cs" />
+    <Compile Include="Concrete\MainPageOptionsService.cs" />
     <Compile Include="Concrete\MessageService.cs" />
     <Compile Include="Concrete\PersonalAccommodationService.cs" />
     <Compile Include="Concrete\PersonalService.cs" />

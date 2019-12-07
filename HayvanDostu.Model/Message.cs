@@ -9,7 +9,9 @@ namespace HayvanDostu.Model
 {
    public class Message :BaseEntity
     {
-        public int MessageDetails { get; set; }
+        public string Name { get; set; }
+        public string LastName { get; set; }
+        public string MessageDetails { get; set; }
         public int PersonalID { get; set; }
 
         public virtual Personal Personal { get; set; }

@@ -929,6 +929,7 @@
     <Content Include="Views\Personal\SendMessage.cshtml" />
     <Content Include="Views\Admin\ListActivePersonal.cshtml" />
     <Content Include="Views\Admin\ListPet.cshtml" />
+    <Content Include="Views\Admin\AdminMainPageOptions.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
