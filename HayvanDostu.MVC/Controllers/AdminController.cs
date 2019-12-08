@@ -18,7 +18,7 @@ namespace HayvanDostu.MVC.Controllers
         IPetService _petService;
         IMainPageOptionsService _mainPageOptionsService;
         AdminModel model;
-        PetListModel petModel;
+        
 
         public AdminController(IPersonalService personalService, ICorporateService corporateService, IPetService petService,IMainPageOptionsService mainPageOptionsService)
         {
