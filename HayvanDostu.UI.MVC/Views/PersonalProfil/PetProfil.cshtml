@@ -1,0 +1,40 @@
+﻿
+@model Pet
+@{
+    ViewBag.Title = "PetProfil";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+<div class="container">
+    <div class="span3 well">
+        <center>
+            <a href="#aboutModal" data-toggle="modal" data-target="#myModal"><img src="@Model.Image" name="aboutme" width="140" height="140" class="img-circle"></a>
+            <h3>@Model.Name</h3>
+        </center>
+    </div>
+</div>
+<div class="container">
+    <div class="span3 well">
+        <span>
+            <strong>Adı:</strong>@Model.Name
+        </span>
+        <br />
+
+        <div><strong>Doğum Tarihi:</strong>@Model.BirthDate </div>
+        <div>
+            <strong>Hikayesi:</strong>
+            @Model.Story
+        </div>
+        <div><strong>Cinsi:</strong>@Model.Gender </div>
+        <span><strong>Türü:</strong>@Model.PetType</span>
+        <br />
+
+        <div class="btn-group">
+            <a href="/PersonalProfil/Profil/@Model.IndividualID" class="btn btn-xs btn-white"><i></i>İlan Sahibi</a>
+
+
+        </div>
+    </div>
+</div>
+

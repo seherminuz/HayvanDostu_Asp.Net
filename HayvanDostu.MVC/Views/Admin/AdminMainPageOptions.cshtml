@@ -1,0 +1,77 @@
+﻿
+@using HayvanDostu.Model
+@model MainPageOptions
+
+@{
+    ViewBag.Title = "AdminMainPageOptions";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+
+<div class="card card-primary">
+    <div class="card-header">
+        <h3 class="card-title">İletişim ve SEO Ayarları</h3>
+    </div>
+    <form role="form" method="post" action="/Admin/AdminMainPageOptions/">
+        @Html.HiddenFor(a => a.ID)
+
+        <div class="card-body">
+            <div class="form-group">
+                <label>Title</label>
+                <input type="text" name="Title" class="form-control" value="@Model.Title" />
+
+            </div>
+            <div class="form-group">
+                <label>Description</label>
+                <input type="text" name="Description" class="form-control" value="@Model.Description" />
+
+            </div>
+            <div class="form-group">
+                <label>Author</label>
+                <input type="text" name="Author" class="form-control" value="@Model.Author" />
+
+            </div>
+            <div class="form-group">
+                <label>Keywords</label>
+                <input type="text" name="Keywords" class="form-control" value="@Model.Keywords" />
+
+            </div>
+            <div class="form-group">
+                <label>Adres</label>
+                <input type="text" name="Address" class="form-control" value="@Model.Address" />
+
+            </div>
+            <div class="form-group">
+                <label>Telefon</label>
+                <input type="tel" name="Phone" class="form-control" value="@Model.Phone" />
+
+
+            </div>
+
+
+            <div class="form-group">
+                <label>Facebook Linki</label>
+                <input type="url" name="SocialLink1" class="form-control" value="@Model.SocialLink1" />
+
+
+            </div>
+            <div class="form-group">
+                <label>Twitter Linki</label>
+                <input type="url" name="SocialLink2" class="form-control" value="@Model.SocialLink2" />
+
+            </div> <div class="form-group">
+                <label>İnstagram Linki</label>
+                <input type="url" name="SocialLink3" class="form-control" value="@Model.SocialLink3" />
+
+
+            </div>
+
+
+        </div>
+        <div class="card-footer">
+            <button type="submit" class="btn btn-primary">Kaydet</button>
+        </div>
+    </form>
+</div>
+

@@ -1,0 +1,159 @@
+﻿@using HayvanDostu.UI.MVC.Models
+@using HayvanDostu.Model
+@model AdminModel
+
+@{
+    ViewBag.Title = "PassiveListPersonal";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<head>
+
+    <!-- normalize CSS
+           ============================================ -->
+    <link rel="stylesheet" href="css/data-table/bootstrap-table.css">
+    <link rel="stylesheet" href="css/data-table/bootstrap-editable.css">
+
+    <!-- charts CSS
+        ============================================ -->
+    <link rel="stylesheet" href="css/c3.min.css">
+</head>
+
+
+<!-- stockprice, feed area end-->
+<div class="admin-dashone-data-table-area mg-b-15">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="sparkline8-list shadow-reset">
+                    <div class="sparkline8-hd">
+                        <div class="main-sparkline8-hd">
+                            <h1>Onay Bekleyen Üyeler</h1>
+                            
+                        </div>
+                    </div>
+                    <div class="sparkline8-graph">
+                        <div class="datatable-dashv1-list custom-datatable-overright">
+
+                            <table id="table" data-toggle="table" data-pagination="true" data-search="true" data-show-columns="true" data-show-pagination-switch="true" data-show-refresh="true" data-key-events="true" data-show-toggle="true" data-resizable="true" data-cookie="true" data-cookie-id-table="saveId" data-show-export="true" data-click-to-select="true" data-toolbar="#toolbar">
+                                <thead>
+                                    <tr>
+                                        <th data-field="state" data-checkbox="true"></th>
+
+                                        <th data-field="status">Aktiflik</th>
+                                        <th></th>
+                                        <th data-field="name" data-editable="true">Ad Soyad</th>
+                                        <th></th>
+                                        <th data-field="complete">E-mail</th>
+                                        <th></th>
+                                        <th data-field="task" data-editable="true">Telefon</th>
+                                        <th></th>
+                                        <th data-field="date" data-editable="true">Doğum tarihi</th>
+                                        <th></th>
+                                        <th data-field="action"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (Personal item in Model.Personals)
+                                    {
+                                        if (item.IsActive == false)
+                                        {
+                                            <tr>
+                                                <td></td>
+
+                                                <td>
+                                                    <div class="btn-group project-list-ad">
+                                                        <a href="/Admin/ConfirmPersonal/@item.ID"><button class="btn btn-white btn-xs">Onayla</button></a>
+                                                    </div>
+                                                </td>
+                                                <td></td>
+                                                <td>@item.FirstName @item.LastName</td>
+                                                <td></td>
+                                                <td>@item.EMail</td>
+                                                <td></td>
+                                                <td>@item.Phone</td>
+                                                <td></td>
+                                                <td>@item.BirthDate</td>
+                                                <td></td>
+                                                <td>
+                                                    <div class="btn-group project-list-action">
+
+                                                        <button class="btn btn-white btn-xs  btnDeletePersonal" data-personalID="@item.ID"><i class="fa fa-pencil"></i> Sil</button>
+
+
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        }
+
+                                    }
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- counterup JS
+    ============================================ -->
+<script src="~/Content/js/counterup/jquery.counterup.min.js"></script>
+<script src="~/Content/js/counterup/waypoints.min.js"></script>
+<!-- peity JS
+    ============================================ -->
+<script src="~/Content/js/peity/jquery.peity.min.js"></script>
+<script src="~/Content/js/peity/peity-active.js"></script>
+<!-- sparkline JS
+    ============================================ -->
+<script src="~/Content/js/sparkline/jquery.sparkline.min.js"></script>
+<script src="~/Content/js/sparkline/sparkline-active.js"></script>
+<!-- map JS
+    ============================================ -->
+<script src="~/Content/js/map/raphael.min.js"></script>
+<script src="~/Content/js/map/jquery.mapael.js"></script>
+<script src="~/Content/js/map/france_departments.js"></script>
+<script src="~/Content/js/map/world_countries.js"></script>
+<script src="~/Content/js/map/usa_states.js"></script>
+<script src="~/Content/js/map/map-active.js"></script>
+<!-- data table JS
+    ============================================ -->
+<script src="~/Content/js/data-table/bootstrap-table.js"></script>
+<script src="~/Content/js/data-table/tableExport.js"></script>
+<script src="~/Content/js/data-table/data-table-active.js"></script>
+<script src="~/Content/js/data-table/bootstrap-table-editable.js"></script>
+<script src="~/Content/js/data-table/bootstrap-editable.js"></script>
+<script src="~/Content/js/data-table/bootstrap-table-resizable.js"></script>
+<script src="~/Content/js/data-table/colResizable-1.5.source.js"></script>
+<script src="~/Content/js/data-table/bootstrap-table-export.js"></script>
+<!-- main JS
+    ============================================ -->
+
+
+@section scripts{
+    <script>
+        $(".btnDeletePersonal").click(function () {
+            var personalID = $(this).attr("data-personalID");
+
+            $.ajax({
+                url: "/Admin/DeletePersonal/" + personalID,
+                type: "GET",
+                data: { "personalID": personalID },
+                success: function (response) {
+                    if (response == "ok") {
+                        alert("Üye silindi");
+                        window.location.reload();
+                    }
+                    else {
+                        alert("HATA");
+                    }
+                }
+            });
+        })
+    </script>
+}
+

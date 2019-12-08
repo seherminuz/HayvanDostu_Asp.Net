@@ -1,0 +1,73 @@
+﻿@using HayvanDostu.Model
+@model Pet
+
+
+@{
+    ViewBag.Title = "PetProfil";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Start main-content -->
+<div class="main-content">
+    <!-- Section: inner-header -->
+    <section class="inner-header divider parallax layer-overlay overlay-white-8" data-bg-img="~/Content/images/bg/bg6.jpg">
+        <div class="container pt-60 pb-60">
+            <!-- Section Content -->
+            <div class="section-content">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <h2 class="title">@Model.Name yuva arıyor...</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="section-content">
+                <div class="row">
+                    <div class="product">
+                        <div class="col-md-5">
+                            <div class="product-image">
+                                <img src="~/Content/images/gallery/w3.jpg" alt="" height="350" width="450"/>
+
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <div class="product-summary">
+                                <h2 class="product-title">@Model.Name</h2>
+                                <div class="price"><span class="amount">@Model.BirthDate</span></div>
+                                <div class="short-description">
+                                    <p>@Model.Story</p>
+                                </div>
+                                <div class="tags">
+                                    <strong>Cinsiyet</strong>
+                                    @if (Model.Gender == true)
+                                    {
+                                        <p>Kız</p>
+
+                                    }
+                                    else
+                                    {
+                                        <p>Erkek</p>
+                                    }
+                                </div>
+                                <div class="category"><strong>Cinsi:</strong><p>@Model.PetType</p></div>
+                                <div class="cart-form-wrapper mt-30">
+                                  
+                                       
+                                     <a style="margin-top:55px;font-size:17px;padding:7px 14px" class="btn btn-default btn-xs btn-add-to-cart" href="/Personal/Profil/@Model.IndividualID">İlan Sahibini Gör</a>
+                                </div>
+
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<!-- end main-content -->

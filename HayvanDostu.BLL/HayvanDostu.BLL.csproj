@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CDF8BD36-44D1-41EE-AA68-517A1285998A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HayvanDostu.BLL</RootNamespace>
+    <AssemblyName>HayvanDostu.BLL</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.3.2.0.0\lib\net45-full\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Web.Common, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.Web.Common.3.2.0.0\lib\net45-full\Ninject.Web.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebActivatorEx.2.0\lib\net40\WebActivatorEx.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Abstract\IBaseService.cs" />
+    <Compile Include="Abstract\IChartService.cs" />
+    <Compile Include="Abstract\ICommentService.cs" />
+    <Compile Include="Abstract\ICorporateService.cs" />
+    <Compile Include="Abstract\IMainPageOptionsService.cs" />
+    <Compile Include="Abstract\IMessageService.cs" />
+    <Compile Include="Abstract\IPersonalAccommodationService.cs" />
+    <Compile Include="Abstract\IPersonalService.cs" />
+    <Compile Include="Abstract\IPetService.cs" />
+    <Compile Include="Abstract\IPhotoService.cs" />
+    <Compile Include="Abstract\IPointService.cs" />
+    <Compile Include="Abstract\IPriceService.cs" />
+    <Compile Include="Abstract\IUserRoleService.cs" />
+    <Compile Include="Abstract\IVeterinaryService.cs" />
+    <Compile Include="Concrete\ChartService.cs" />
+    <Compile Include="Concrete\CommentService.cs" />
+    <Compile Include="Concrete\CorporateService.cs" />
+    <Compile Include="Concrete\MainPageOptionsService.cs" />
+    <Compile Include="Concrete\MessageService.cs" />
+    <Compile Include="Concrete\PersonalAccommodationService.cs" />
+    <Compile Include="Concrete\PersonalService.cs" />
+    <Compile Include="Concrete\PetService.cs" />
+    <Compile Include="Concrete\PhotoService.cs" />
+    <Compile Include="Concrete\PointService.cs" />
+    <Compile Include="Concrete\PriceService.cs" />
+    <Compile Include="Concrete\UserRoleService.cs" />
+    <Compile Include="Concrete\VeterinaryService.cs" />
+    <Compile Include="Abstract\IReservationAccommodationService.cs" />
+    <Compile Include="Abstract\IReservationService.cs" />
+    <Compile Include="Concrete\ReservationAccommodationService.cs" />
+    <Compile Include="Concrete\ReservationService.cs" />
+    <Compile Include="IOC\Ninject\DALModule.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\HayvanDostu.Core\HayvanDostu.Core.csproj">
+      <Project>{20d21230-01ee-4902-ae15-401a224b0017}</Project>
+      <Name>HayvanDostu.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HayvanDostu.DAL\HayvanDostu.DAL.csproj">
+      <Project>{7491104b-3bbe-40d9-9ba6-0cf8e51b65b9}</Project>
+      <Name>HayvanDostu.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HayvanDostu.Model\HayvanDostu.Model.csproj">
+      <Project>{a1bc8fb0-67e8-4fe9-9d12-810ddc12f41e}</Project>
+      <Name>HayvanDostu.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,74 @@
+﻿@using HayvanDostu.MVC.Models
+@using HayvanDostu.Model
+@model AdminModel
+@{
+    ViewBag.Title = "ListPet";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="card card-primary card-outline">
+    <div class="card-header">
+        <h3 class="card-title">Aktif Üyeler</h3>
+
+    </div>
+    <div class="card-body p-0">
+
+        <div class="table-responsive mailbox-messages">
+            <table class="table table-hover table-striped">
+                <thead>
+                    <tr>
+                        <td>Ad</td>
+                        <td>Cinsi</td>
+                        <td>Türü</td>
+                        <td>Cinsiyeti</td>
+                        <td>Doğum Tarihi</td>
+                    </tr>
+                </thead>
+                @foreach (Pet item in Model.Pets)
+                {
+                    <tbody>
+                        <tr>
+
+                            <td class="mailbox-name">@item.Name</td>
+                            <td class="mailbox-subject">
+                                <b>@item.PetKind</b>
+                            </td>
+                            <td class="mailbox-name">@item.PetType</td>
+                            <td class="mailbox-name">@item.Gender</td>
+                            <td class="mailbox-name">@item.BirthDate</td>
+                            <td>
+                                <button type="button" class="btn btn-danger btnDelete " data-deleteID="@item.ID">Sil</button>
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                }
+            </table>
+        </div>
+    </div>
+
+</div>
+@section scripts{
+    <script>
+        $(".btnDelete").click(function () {
+            var deleteID = $(this).attr("data-deleteID");
+
+            $.ajax({
+                url: "/Admin/DeletePet/" + deleteID,
+                type: "GET",
+                data: { "deleteID": deleteID },
+                success: function (response) {
+                    if (response == "ok") {
+                        alert("Üye silindi");
+                        window.location.reload();
+                    }
+                    else {
+                        alert("HATA");
+                    }
+                }
+            });
+        })
+    </script>
+}

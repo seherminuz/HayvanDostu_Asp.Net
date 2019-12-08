@@ -1,0 +1,81 @@
+﻿@using HayvanDostu.MVC.Models
+@using HayvanDostu.Model
+@model AdminModel
+@{
+    ViewBag.Title = "ListActivePersonal";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="card card-primary card-outline">
+    <div class="card-header">
+        <h3 class="card-title">Aktif Üyeler</h3>
+
+    </div>
+    <div class="card-body p-0">
+
+        <div class="table-responsive mailbox-messages">
+            <table class="table table-hover table-striped">
+                <thead>
+                    <tr>
+                        <td>Ad Soyad</td>
+                        <td>Mail</td>
+                        <td>Telefon</td>
+                        <td>Evcil Hayvan Sayısı</td>
+                    </tr>
+                </thead>
+                @foreach (Personal item in Model.Personals)
+                {
+
+                    if (item.IsActive == true)
+                    {
+                        <tbody>
+                            <tr>
+
+                                <td class="mailbox-name">@item.FirstName &nbsp; @item.LastName</td>
+                                <td class="mailbox-subject">
+                                    <b>@item.EMail</b>
+                                </td>
+                                <td class="mailbox-name">@item.Phone</td>
+                                <td class="mailbox-name">@item.PetCount</td>
+
+                                <td>
+                                    <button type="button" class="btn btn-danger btnDelete " data-deleteID="@item.ID">Sil</button>
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+                    }
+
+
+                }
+            </table>
+        </div>
+    </div>
+
+</div>
+
+
+@section scripts{
+    <script>
+        $(".btnDelete").click(function () {
+            var deleteID = $(this).attr("data-deleteID");
+
+            $.ajax({
+                url: "/Admin/DeletePersonal/" + deleteID,
+                type: "GET",
+                data: { "deleteID": deleteID },
+                success: function (response) {
+                    if (response == "ok") {
+                        alert("Üye silindi");
+                        window.location.reload();
+                    }
+                    else {
+                        alert("HATA");
+                    }
+                }
+            });
+        })
+    </script>
+}
+

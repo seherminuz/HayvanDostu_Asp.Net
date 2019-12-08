@@ -1,0 +1,159 @@
+﻿@using HayvanDostu.Model
+@model List<Message>
+@{
+    ViewBag.Title = "MessageBox";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="main-content">
+    <!-- Section: inner-header -->
+    <section class="inner-header divider parallax layer-overlay overlay-white-8" data-bg-img="images/bg/bg6.jpg">
+        <div class="container pt-60 pb-60">
+            <!-- Section Content -->
+            <div class="section-content">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <h2 class="title">MESAJLARINIZ</h2>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section>
+        <div class="container">
+            <div class="section-content">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="table-responsive">
+                            <table class="table table-striped table-bordered tbl-shopping-cart">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>Gönderen: </th>
+                                        <th>Mesaj Detayı: </th>
+                                        <th></th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (Message item in Model)
+                                    {
+                                        if (item.PersonalID == Convert.ToInt32(Session["personalID"]))
+                                        {
+
+                                            <tr class="cart_item">
+                                                <td></td>
+
+                                                <td class="product-name">
+                                                    <a href="#">@item.Name &nbsp; @item.LastName</a>
+
+                                                </td>
+                                                <td class="product-name">
+
+                                                    <button type="button" class="btn btn-primary btnModal" data-modalID="@item.ID">Detay Göster</button>
+
+
+                                                </td>
+                                                <td>
+
+
+                                                    <span></span>
+
+
+
+                                                </td>
+                                                <td> <button style="font-size:15px; background-color:firebrick;color:aliceblue" type="submit" class="btn btn-default btn-xs btn-add-to-cart btnDelete" data-id="@item.ID">Sil</button></td>
+                                            </tr>
+                                        }
+
+                                    }
+
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+<div class="modal" id="modalInfo">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            </div>
+            <form method="post">
+                <div class="modal-body">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Kapat</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+@section scripts{
+
+    <script>
+        $(".btnModal").click(function () {
+
+            var modalID = $(this).attr("data-modalID")
+            $.ajax({
+                url: "/Personal/ReadMessage/" + modalID,
+                type: "POST",
+                data: { "id": modalID },
+                success: function (response) {
+                    if (response != null) {
+
+                        var text = '<h5 class="modal-title">Mesaj: <br> ' + response.items.MessageDetails + '</h5>';
+                        $("#modalInfo .modal-body").html(text);
+                        $("#modalInfo").modal("show");
+
+                        var title = ' <h2 class="modal-title">Gönderen: ' + response.items.Name + '&nbsp;' + response.items.LastName +  '</h2>';
+                        $("#modalInfo .modal-header").html(title);
+                        $("#modalInfo").modal("show");
+                    }
+
+                    else {
+                        $("#modalInfo .modal-body").text(response.message);
+                        $("#modalInfo").modal("show");
+                    }
+                }
+
+            });
+
+        })
+    </script>
+
+    <script>
+        $(".btnDelete").click(function () {
+            var deleteID = $(this).attr("data-deleteID");
+
+            $.ajax({
+                url: "/Personal/DeleteMessage/" + deleteID,
+                type: "GET",
+                data: { "deleteID": deleteID },
+                success: function (response) {
+                    if (response == "ok") {
+                        alert("Mesaj silindi");
+                        window.location.reload();
+                    }
+                    else {
+                        alert("HATA");
+                    }
+                }
+            });
+        })
+    </script>
+}
+

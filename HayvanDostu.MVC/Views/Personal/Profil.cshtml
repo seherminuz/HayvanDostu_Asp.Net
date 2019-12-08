@@ -1,0 +1,70 @@
+﻿@using HayvanDostu.Model
+@model Personal
+@{
+    ViewBag.Title = "Profil";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Start main-content -->
+<div class="main-content">
+    <!-- Section: inner-header -->
+    <section class="inner-header divider parallax layer-overlay overlay-white-8" data-bg-img="~/Content/images/bg/bg6.jpg">
+        <div class="container pt-60 pb-60">
+            <!-- Section Content -->
+            <div class="section-content">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="section-content">
+                <div class="row">
+                    <div class="product">
+                        <div class="col-md-5">
+                            <div class="product-image">
+                                <img src="@Model.ImagePath1" alt="" height="350" width="450" />
+
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <div class="product-summary">
+                                <h2 class="product-title">@Model.FirstName &nbsp; @Model.LastName</h2>
+                                <div class="price"><span class="amount">@Model.EMail</span></div>
+                                <div class="short-description">
+                                    <strong>Adres : </strong>
+                                    <p>@Model.Address</p>
+                                </div>
+                                <div class="tags">
+                                    <strong>Evcil Hayvan Sayısı : </strong>
+                                    <p>@Model.PetCount</p>
+                                </div>
+                                <div class="category"><strong>Telefon:</strong><p>@Model.Phone</p></div>
+                                <div class="cart-form-wrapper mt-30">
+                                    @if (Model.ID == Convert.ToInt32(Session["personalID"]))
+                                    {
+                                        <a style="margin-top:55px;font-size:17px;padding:7px 14px" class="btn btn-default btn-xs btn-add-to-cart" href="/Personal/ProfilUpdate/@Model.ID">Profil Düzenle</a>
+                                    }
+                                    else
+                                    {
+
+                                        <a style="margin-top:75px;font-size:17px;padding:7px 14px" class="btn btn-default btn-xs btn-add-to-cart" href="/Personal/SendMessage/@Model.ID">Mesaj Gönder</a>
+                                    }
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<!-- end main-content -->

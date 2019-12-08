@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+@{Html.RenderAction("Header"); }
+<body class="">
+    <div id="wrapper">
+        <!-- preloader -->
+        <div id="preloader">
+            <div id="spinner" class="spinner large-icon">
+                <img alt="" src="~/Content/images/preloaders/13.gif">
+                <h5 class="line-height-1 font-18">Loading...</h5>
+            </div>
+            <div id="disable-preloader" class="btn btn-default btn-sm">Disable Preloader</div>
+        </div>
+
+        <!-- Header -->
+        <header class="header">
+            <div class="header-top bg-theme-colored sm-text-center">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="widget no-border m-0">
+                                <ul class="list-inline sm-text-center mt-5">
+
+                                    <li>
+                                        @RenderSection("signin", false)
+
+                                    </li>
+
+
+                                    <li>
+                                        @RenderSection("signup", false)
+
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="widget no-border m-0">
+                                <ul class="styled-icons icon-dark icon-circled icon-theme-colored icon-sm pull-right flip sm-pull-none sm-text-center mt-sm-15">
+                                    <li><a href="#"><i class="fa fa-facebook text-white"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter text-white"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-dribbble text-white"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-instagram text-white"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-linkedin text-white"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-nav">
+                <div class="header-nav-wrapper navbar-scrolltofixed bg-white">
+                    <div class="container deneme">
+                        <nav id="menuzord-right" class="menuzord green no-bg deneme">
+                            <a class="menuzord-brand pull-left flip" href="javascript:void(0)"><img src="images/logo-wide.png" alt=""></a>
+                            <ul class="menuzord-menu">
+                                <li><a class="active" href="/Home/Index/">Anasayfa</a></li>
+                                <li>
+                                    <a href="/Home/Index/">Hakkımızda</a>
+
+                                </li>
+                                <li>
+                                    <a href="#">HİZMETLER</a>
+                                    <ul class="dropdown">
+                                        <li><a href="/Personal/PetList/">Hayvan Sahiplenme</a></li>
+                                        <li><a href="/Personal/PetProfileCreate">Hayvan Sahiplendirme</a></li>
+                                        <li><a href="features-preloader.html">Hayvan Tedavi&Bakım</a></li>
+                                        <li><a href="features-preloader.html">Hayvan Konaklama</a></li>
+
+
+
+
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="/Home/Index/">İLETİŞİM</a>
+
+                                </li>
+                                <li>
+                                    @RenderSection("profile",false)
+                                </li>
+
+
+                            </ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        @RenderBody()
+        @{Html.RenderAction("Footer"); }
+
+        <a class="scrollToTop" href="#"><i class="fa fa-angle-up"></i></a>
+    </div>
+    <!-- end wrapper -->
+    <!-- Footer Scripts -->
+    <!-- JS | Custom script for all pages -->
+    <script src="~/Content/js/custom.js"></script>
+
+    <!-- SLIDER REVOLUTION 5.0 EXTENSIONS
+          (Load Extensions only on Local File Systems !
+           The following part can be removed on Server for On Demand Loading) -->
+    <script type="text/javascript" src="~/Content/js/revolution-slider/js/extensions/revolution.extension.actions.min.js"></script>
+    <script type="text/javascript" src="~/Content/js/revolution-slider/js/extensions/revolution.extension.carousel.min.js"></script>
+    <script type="text/javascript" src="~/Content/js/revolution-slider/js/extensions/revolution.extension.kenburn.min.js"></script>
+    <script type="text/javascript" src="~/Content/js/revolution-slider/js/extensions/revolution.extension.layeranimation.min.js"></script>
+    <script type="text/javascript" src="~/Content/js/revolution-slider/js/extensions/revolution.extension.migration.min.js"></script>
+    <script type="text/javascript" src="~/Content/js/revolution-slider/js/extensions/revolution.extension.navigation.min.js"></script>
+    <script type="text/javascript" src="~/Content/js/revolution-slider/js/extensions/revolution.extension.parallax.min.js"></script>
+    <script type="text/javascript" src="~/Content/js/revolution-slider/js/extensions/revolution.extension.slideanims.min.js"></script>
+    <script type="text/javascript" src="~/Content/js/revolution-slider/js/extensions/revolution.extension.video.min.js"></script>
+</body>
+
+</html>
+@RenderSection("scripts", false)
